@@ -1,16 +1,20 @@
 import React from "react";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
+import Header from "../Header";
+import Sidebar from "../Sidebar";
+import Widgets from "../Widgets";
+import Charts from "../Charts";
 
 const Overview = () => {
   return (
-    <div>
-      <Header />
+    <div className="flex">
       <Sidebar />
-      <main style={{ marginLeft: "220px", padding: "20px" }}>
-        <h2>Dashboard Overview</h2>
-        <p>Welcome to the SaaS Dashboard! Use the sidebar to navigate.</p>
-      </main>
+      <div className="flex-1 bg-gray-100 p-6">
+        <Header />
+        <div className="my-4">
+          <Widgets />
+        </div>
+        <Charts />
+      </div>
     </div>
   );
 };

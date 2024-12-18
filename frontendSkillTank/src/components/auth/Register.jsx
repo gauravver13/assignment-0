@@ -58,69 +58,152 @@ const Register = () => {
 
 
     // HERE"S TO FIX
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-    <Card className="w-full max-w-md">
-      <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl font-bold text-center">abilityEx</CardTitle>
-        <CardDescription className="text-center">Create your account</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-              Name
-            </label>
-            <Input
-              id="name"
-              name="name"
-              type="text"
-              required
-              className="mt-1"
-              placeholder="John Doe"
-              value={formData.name}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              Email
-            </label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              required
-              className="mt-1"
-              placeholder="you@example.com"
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Password
-            </label>
-            <Input
-              id="password"
-              name="password"
-              type="password"
-              required
-              className="mt-1"
-              placeholder="••••••••"
-              value={formData.password}
-              onChange={handleChange}
-            />
-          </div>
-          <Button type="submit" className="w-full">
-            Register
-          </Button>
-        </form>
-      </CardContent>
-      <CardFooter className="text-center text-sm text-gray-600">
-        Already have an account? <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">Sign in</a>
-      </CardFooter>
-    </Card>
+  //   <div className="min-h-screen bg-gray-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  //   <Card className="w-full max-w-md">
+  //     <CardHeader className="space-y-1">
+  //       <CardTitle className="text-2xl font-bold text-center">abilityEx</CardTitle>
+  //       <CardDescription className="text-center">Create your account</CardDescription>
+  //     </CardHeader>
+  //     <CardContent>
+  //       <form onSubmit={handleSubmit} className="space-y-4">
+  //         <div>
+  //           <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+  //             Name
+  //           </label>
+  //           <Input
+  //             id="name"
+  //             name="name"
+  //             type="text"
+  //             required
+  //             className="mt-1"
+  //             placeholder="John Doe"
+  //             value={formData.name}
+  //             onChange={handleChange}
+  //           />
+  //         </div>
+  //         <div>
+  //           <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+  //             Email
+  //           </label>
+  //           <Input
+  //             id="email"
+  //             name="email"
+  //             type="email"
+  //             required
+  //             className="mt-1"
+  //             placeholder="you@example.com"
+  //             value={formData.email}
+  //             onChange={handleChange}
+  //           />
+  //         </div>
+  //         <div>
+  //           <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+  //             Password
+  //           </label>
+  //           <Input
+  //             id="password"
+  //             name="password"
+  //             type="password"
+  //             required
+  //             className="mt-1"
+  //             placeholder="••••••••"
+  //             value={formData.password}
+  //             onChange={handleChange}
+  //           />
+  //         </div>
+  //         <Button type="submit" className="w-full">
+  //           Register
+  //         </Button>
+  //       </form>
+  //     </CardContent>
+  //     <CardFooter className="text-center text-sm text-gray-600">
+  //       Already have an account? <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">Sign in</a>
+  //     </CardFooter>
+  //   </Card>
+  // </div>
+
+// change is here::::::::::
+
+
+
+
+<div className="min-h-screen flex flex-col bg-gray-100">
+{/* Header */}
+<header className="bg-blue-600 text-white py-4 text-center">
+  <h1 className="text-3xl font-bold">AbilityEx</h1>
+</header>
+
+{/* Main Content */}
+<main className="flex justify-center items-center flex-grow">
+  <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h2 className="text-2xl font-semibold text-center mb-6">Create an Account</h2>
+
+    {/* Register Form */}
+    <form onSubmit={handleSubmit}>
+      <div className="grid grid-cols-1 gap-4">
+        {/* Name Field */}
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="mt-1 p-2 border border-gray-300 rounded-lg w-full"
+            placeholder="John Doe"
+          />
+        </div>
+
+        {/* Email Field */}
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="mt-1 p-2 border border-gray-300 rounded-lg w-full"
+            placeholder="Enter your email"
+          />
+        </div>
+
+        {/* Password Field */}
+        <div>
+          <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+            className="mt-1 p-2 border border-gray-300 rounded-lg w-full"
+            placeholder="Enter your password"
+          />
+        </div>
+      </div>
+
+      {/* Buttons */}
+      <div className="mt-6">
+        <button
+          type="submit"
+          className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+        >
+          Sign Up
+        </button>
+        <div className="text-center mt-4">
+          <span className="text-sm text-gray-600">Already have an account? </span>
+          <a href="/login" className="text-blue-600 hover:underline text-sm">Sign In</a>
+        </div>
+      </div>
+    </form>
   </div>
+</main>
+</div>
   );
 };
 
